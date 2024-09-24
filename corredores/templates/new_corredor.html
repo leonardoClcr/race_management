@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table table-bordered">
+            <tbody>
+                {{ new_corredor_form.as_table }}
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <a href="{% url 'corredores' %}" class="btn btn-danger">Voltar</a>
+    </form>
+
+{% endblock %}
